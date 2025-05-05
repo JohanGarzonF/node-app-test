@@ -19,7 +19,7 @@ app.use(express.json())
 
 //Routes
 // Auth: // register login logout
-app.use('/', ( req, res )=> {
+app.get('/', ( req, res )=> {
   res.send('It works')
 })
 app.use('/api/auth', authRouter)
