@@ -2,7 +2,7 @@ import express from 'express'
 import authRouter from './routes/auth.route.js'
 import { dbConnection } from './db/config.js'
 import cors from 'cors'
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 4000
 
 // create server
 const app = express()
@@ -19,6 +19,9 @@ app.use(express.json())
 
 //Routes
 // Auth: // register login logout
+app.use('/', ( req, res )=> {
+  res.send('It works')
+})
 app.use('/api/auth', authRouter)
 
 app.listen(PORT, () => {
